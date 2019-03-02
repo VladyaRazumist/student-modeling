@@ -1,14 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package studentmodel;
-import java.util.*;
-/**
- *
- * @author леха
- */
 public class GSolver {
     private final Student S;
     private final Task T;
@@ -27,7 +16,7 @@ public class GSolver {
     public double getNumberOfCompleted() {
         return N;
     }
-    public double ProbOfComplete(int t11,int t22)
+    public double probOfComplete(int t11, int t22)
     {
        if (t11>t22) {
            System.out.println("t1>t2");
@@ -60,12 +49,13 @@ public class GSolver {
         
         
     }
-        System.out.println();
+
         double P=1-Math.pow(p, h);
         this.P=P;
         this.N=P*S.getWeight();
         return N;
 }
+
    public StartFinish getNeighbour (int t1, int t2)throws InvalidDistanceException {
      double random1=Math.random();
     StartFinish sf=new StartFinish(t1,t2);
@@ -126,13 +116,13 @@ public class GSolver {
         t1=middle-t12;
         t2=middle+t12;
         System.out.println(t1 +" "+ t2);
-        double currentSolution=ProbOfComplete(t1,t2);
+        double currentSolution= probOfComplete(t1,t2);
         StartFinish sfl=new StartFinish(t1,t2);
         StartFinish sf=new StartFinish(t1,t2);
         
          sf=getNeighbour(t1,t2);
         
-        nextSolution =ProbOfComplete(sf.getStart(),sf.getFinish());
+        nextSolution = probOfComplete(sf.getStart(),sf.getFinish());
         
         if (nextSolution>currentSolution){
             currentSolution=nextSolution;

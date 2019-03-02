@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package studentmodel;
 
-/**
- *
- * @author леха
- */
+
+
 public class Task {
     private final double B; // price of Task
     private final int t1; // the earliest time to start
